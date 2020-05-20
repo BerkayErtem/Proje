@@ -1,0 +1,29 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+
+
+
+
+
+    <title>Huawei Data Analysis</title>
+    <h2>Welcome to Data Analysis Task Created with Python</h2>
+    <p>This task perfoms Data Analysis to make predictions about sales of a Pizza Restaurant.</p>
+{% if user.is_authenticated %}
+    <a class="a" href="{% url 'blog-chicago' %}"> Analyse for the Chicago Pizza </a><br><br>
+    <a class="a" href="{% url 'blog-neapolitan' %}"> Analyse for the Neapolitan Pizza </a><br><br>
+    <a class="a" href="{% url 'blog-sicilian' %}"> Analyse for the Sicilian Pizza  </a><br><br>
+    <a class="a" href="{% url 'blog-tomato' %}"> Analyse for the Tomato Pie Pizza  </a><br><br>
+    <sub>You will be asked to enter the prediction step number and whether download the file in CMD</sub><br><br>
+
+
+
+{% else%}
+    <div class="log">Do You Have an Account?<a class="loga" href="{% url 'Login' %}"> Login!</a>
+    </div>
+    <div class="reg">Do You Need an Account?<a class="rega" href="{% url 'register' %}"> Register Now!</a>
+    </div>
+{% endif %}
+
+
+{% endblock content %}
